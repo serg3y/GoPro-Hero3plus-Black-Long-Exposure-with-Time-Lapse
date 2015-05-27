@@ -1,6 +1,6 @@
 # GoPro-Hero3plus-Long-Exposure-with-Time-Lapse
 
-I see many versions of gopro autoexac scripts and none work 100% for my Hero3+Black. I made some changes and the attached code works for me. The code belongs in an "autoexac.ash" file that must be placed in the root directory of the SD card. The code starts running when camera is turned on and not charging. Camera will accept user commands while the script is running a "sleep" command. There are many restrictions on the file format some of which are listed here.
+I see many versions of gopro autoexac scripts and none work on my Hero3+Black. I made some changes and the attached code works for me. The code belongs in an "autoexac.ash" file that must be placed in the root directory of the SD card. The code starts running when camera is turned on and not charging. Camera will accept user commands while the script is running a "sleep" command. There are many restrictions on the file format some of which are listed here.
 
 sleep 3                               #wait for boot menu screen to clear (1-3 sec)
 t app appmode photo                   #switch to photo mode
