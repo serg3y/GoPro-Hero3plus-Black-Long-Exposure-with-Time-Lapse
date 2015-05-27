@@ -10,6 +10,8 @@ I see many versions of gopro scripts for long exposure and time lapse but each s
 > 6. sleep 10                              #wait for exposure (up to 8 sec), and image to be processed (1-2 sec)
 > 7. reboot yes                            #restart GoPro and run the script again
 
+Tested on HERO3+ Black Edition, firmware version:"HD3.11.03.00" and "HD3.11.02.00"
+
 ExposureCode = -ln(ExposureTime/8)*182
 
 ExposureTime = 8*exp(-ExposureCode/182)
@@ -27,8 +29,6 @@ ExposureTime (sec)|ExposureCode
 2                 |     252
 5                 |      86
 8                 |       0
-
-Script was tested on HERO3+ Black Edition, firmware version:"HD3.11.03.00" and "HD3.11.02.00"
 
 Line Feeds:
 - You must use Linux style line feed to end each line, this is ascii code 10, often referred to as "/n" in computer codes
