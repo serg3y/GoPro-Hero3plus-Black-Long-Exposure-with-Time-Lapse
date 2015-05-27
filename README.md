@@ -10,17 +10,21 @@ I see many versions of gopro autoexac scripts and none work on my Hero3+Black. I
 > 6. sleep 10                              #wait for exposure (up to 8 sec), and image to be processed (1-2 sec)
 > 7. reboot yes                            #restart GoPro and run the script again
 
-#ExposureCode = -ln(ExposureTime/8)*182
+ExposureCode = -ln(ExposureTime/8)*182
 
-Time(sec) |TimeCode
-----------|---------
-0.033     |     999
-0.05      |     924
-0.1       |     798
-0.2       |     671
-0.5       |     505
-1         |     378
-2         |     252
-5         |      86
-8         |       0
+ExposureTime = 8*exp(-ExposureCode/182)
+
+ExposureCode must be rounded to the nearest integer and in the range [0 1000]
+
+ExposureTime|TimeCode
+------------|---------
+0.033       |     999
+0.05        |     924
+0.1         |     798
+0.2         |     671
+0.5         |     505
+1           |     378
+2           |     252
+5           |      86
+8           |       0
  
