@@ -1,6 +1,6 @@
 # GoPro Hero3+ Black: Long Exposure with Time Lapse
 
-There are many versions of gopro scripts for long exposure and time lapse but each seems to have something wrong with it for useing with Hero3+Black. So here is my version. The code belongs in an "autoexac.ash" file, which must be placed in the root directory of the SD card. The code starts running when camera is turned on, *while not charging*. Camera will accept user commands while the script is running "sleep" commands. There are many restrictions on the file format some of which are listed here. Time lapse is achieved by rebooting at the end of the script. Time lapse can also be achieved by repeating commands, hoever the limit on maximum file length is rather short, and if exceeded the script will not start. (I don't know if the limit is charecter or line or command based). User must replace ISO and ExposureTime with valid calues. Script tested on HERO3+ Black Edition, firmware version:"HD3.11.03.00" and "HD3.11.02.00".
+There are many versions of gopro scripts for long exposure and time lapse but each seems to have something wrong with it for useing with Hero3+Black. So here is my version. The code belongs in an "autoexac.ash" file, which must be placed in the root directory of the SD card. The code starts running when camera is turned on, *while not charging*. Camera will accept user commands while the script is running "sleep" commands. There are many restrictions on the file format some of which are listed here. Time lapse is achieved by rebooting at the end of the script. Time lapse can also be achieved by repeating commands, hoever the limit on maximum file length is rather short, and if exceeded the script will not start. (I don't know if the limit is charecter or line or command based). User must replace ISO and ExposureCode with valid values. Script was tested using HERO3+ Black Edition, firmware version:"HD3.11.03.00" and "HD3.11.02.00".
 
 > 1. sleep 3                               #wait for boot menu screen to clear (1-3 sec)
 > 2. t app appmode photo                   #switch to photo mode
@@ -9,6 +9,8 @@ There are many versions of gopro scripts for long exposure and time lapse but ea
 > 5. t app button shutter PR               #start exposure
 > 6. sleep 10                              #wait for exposure (up to 8 sec), and image to be processed (1-2 sec)
 > 7. reboot yes                            #restart GoPro and run the script again
+
+Valid ISO values need to be checked, probably 100, 200, 300, 400, 500, 600, 700 or 800
 
 ExposureCode = -ln(ExposureTime/8)*182 (rounded to the nearest integer and in the range [0 1000])
 
@@ -23,6 +25,7 @@ ExposureTime (sec)|ExposureCode
 2                 |     252
 5                 |      86
 8                 |       0
+Above time table and equation are derived from EXIF information printed to photos collected at various settings.
 
 Line Feeds:
 - You must use Linux style line feed to end each line, this is ascii code 10, often referred to as "/n" in computer codes
