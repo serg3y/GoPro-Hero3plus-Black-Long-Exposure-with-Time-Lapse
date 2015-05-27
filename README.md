@@ -1,6 +1,6 @@
 # GoPro Hero3+ Black: Long Exposure with Time Lapse
 
-I see many versions of gopro scripts for long exposure and time lapse but each seems to have somthing wrong with it for useing with Hero3+Black. So here is my version. The code belongs in an "autoexac.ash" file, which must be placed in the root directory of the SD card. The code starts running when camera is turned on *if it is and not charging*. Camera will accept user commands while the script is running "sleep" commands. There are many restrictions on the file format some of which are listed here.
+There are many versions of gopro scripts for long exposure and time lapse but each seems to have something wrong with it for useing with Hero3+Black. So here is my version. The code belongs in an "autoexac.ash" file, which must be placed in the root directory of the SD card. The code starts running when camera is turned on *if it is and not charging*. Camera will accept user commands while the script is running "sleep" commands. There are many restrictions on the file format some of which are listed here. Time lapse is achieved by rebooting at the end of the script. Time lapse can also be achieved by repeating commands, hoever the limit on maximum file length is rather short, and if exceeded the script will not start. (I don't know if the limit is charecter or line or command based).
 
 > 1. sleep 3                               #wait for boot menu screen to clear (1-3 sec)
 > 2. t app appmode photo                   #switch to photo mode
