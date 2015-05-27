@@ -1,5 +1,18 @@
 # GoPro-Hero3plus-Long-Exposure-with-Time-Lapse
 
+I see many versions of gopro autoexac scripts and none work 100% for my Hero3+Black. I adapted this one and it works for me. This code belongs in an "autoexac.ash" file that must be placed in the root directory of the SD card. The script starts running when camera is turned on (but not charging). Camera will continue to accept user commands while the script is running a "sleep" command. There are many restrictions on the file format some of which are listed at the end.
+
+sleep 3                               #wait for boot menu screen to clear (1-3 sec)
+t app appmode photo                   #switch to photo mode
+sleep 1                               #wait for photo mode change to take place (works 95% of the time without this)
+
+t ia2 -ae still_exp ISO ExposureCode  #set ISO and ExposureCode = -ln(ExposureTime/8)*182
+t app button shutter PR               #start exposure
+sleep 10                              #wait for exposure to end (up to 8 sec), and for image to be processed (1-2 sec)
+
+reboot yes                            #restart GoPro and run the script again
+                                      #deliberate blank line
+                                       
 Time(sec) |TimeCode
 ----------|---------
 0.033     |     999
@@ -11,29 +24,3 @@ Time(sec) |TimeCode
 2         |     252
 5         |      86
 8         |       0
-     
-     
-Value (number to write in hack file) | Exposure Time (seconds)
--------------|--------------------------------
-5            | 7,7
-15           | 7,3
-20           | 7,1
-25           | 6,9
-30           | 6,8
-39           | 6,4
-40           | 6,3
-45           | 6,2
-50           | 6,1
-75           | 5,3
-85           | 5
-95           | 4,7
-99           | 4,6
-100          | 4,6
-130          | 3,9
-160          | 3,3
-200          | 2,7
-255          | 2
-400          | 1
-500          | 0,56
-600          | 0,33333
-1000         | 0,000158328
