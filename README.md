@@ -28,10 +28,10 @@ ExposureTime (sec)|ExposureCode
 Above time table and equation are derived from EXIF information printed to photos collected at various settings.
 
 Line Feeds:
-- You must use Linux style line feed to end each line, this is ascii code 10, often referred to as "/n" in computer codes
+- You must use Linux style line feed to end each line, this is ascii code 10, often coded as "/n".
 - Windows style line breaks, /r/n, will crash the scrip! To correct use notepad++, go to edit>EOL conversion>Unix.
 - The last line in the script must end in a line feed, else it will not execute!
-- You can have blank lines to separate code segments
+- You can have blank lines to separate code segments.
 
 General:
 - To convert a desired exposure time into exposure code: code = round(-ln(time_in_sec/8)*182) in the range [1 to 1000]
