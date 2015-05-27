@@ -16,7 +16,7 @@ ExposureTime = 8*exp(-ExposureCode/182)
 
 ExposureCode must be rounded to the nearest integer and in the range [0 1000]
 
-ExposureTime|TimeCode
+ExposureTime|ExposureCode
 ------------|---------
 0.033       |     999
 0.05        |     924
