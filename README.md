@@ -12,7 +12,7 @@ t app button shutter PR               #start exposure
 sleep 10                              #wait for exposure to end (up to 8 sec), and for image to be processed (1-2 sec)
 
 reboot yes                            #restart GoPro and run the script again
-                                      #deliberate blank line
+                                      #deliberate blank line 
 --------------------------------
                                        
 Time(sec) |TimeCode
