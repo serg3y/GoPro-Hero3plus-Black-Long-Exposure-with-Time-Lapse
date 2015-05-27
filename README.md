@@ -16,17 +16,17 @@ ExposureTime = 8*exp(-ExposureCode/182)
 
 ExposureCode must be rounded to the nearest integer and in the range [0 1000]
 
-ExposureTime|ExposureCode
-------------|---------
-0.033       |     999
-0.05        |     924
-0.1         |     798
-0.2         |     671
-0.5         |     505
-1           |     378
-2           |     252
-5           |      86
-8           |       0
+ExposureTime (sec)|ExposureCode
+------------------|---------
+0.033             |     999
+0.05              |     924
+0.1               |     798
+0.2               |     671
+0.5               |     505
+1                 |     378
+2                 |     252
+5                 |      86
+8                 |       0
 
 Script was tested on HERO3+ Black Edition, firmware version:"HD3.11.03.00" and "HD3.11.02.00"
 
