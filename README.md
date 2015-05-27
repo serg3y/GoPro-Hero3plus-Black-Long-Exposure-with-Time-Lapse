@@ -27,4 +27,27 @@ ExposureTime|ExposureCode
 2           |     252
 5           |      86
 8           |       0
- 
+
+Script was tested on HERO3+ Black Edition, firmware version:"HD3.11.03.00" and "HD3.11.02.00"
+
+Line Feeds:
+- You must use Linux style line feed to end each line, this is ascii code 10, often referred to as "/n" in computer codes
+- Windows style line breaks, /r/n, will crash the scrip! To correct use notepad++, go to edit>EOL conversion>Unix.
+- The last line in the script must end in a line feed, else it will not execute!
+- You can have blank lines to separate code segments
+
+General:
+- To convert a desired exposure time into exposure code: code = round(-ln(time_in_sec/8)*182) in the range [1 to 1000]
+- Turning on the camera while it is charging will not trigger the execution of autoexec.ash! However autoexec.ash will continue to run if camera is connected to power after it is turned on, but a reboot will stop execution.
+- If the script does not have long sleep periods of 3+ seconds the user will not be able to shut down the camera gracefully.
+- The camera does NOT wait for photo to be captured, so captures should be followed by a "sleep" that is longer than the exposure time (8 sec max) PLUS time needed to process the photo (1-2 sec).
+- Having short or missing sleep periods will result in unreliable execution of the subsequent command. eg 1-3 sec sleep at the star, and 1 second sleep after changing camera mode.
+- Camera light flashes at the end of the exposure, not at the start.
+
+Commenting:
+- Extra spaces after a command can be added and will be ignored.
+- Comments using "#" either on a blank line or after a command can be added.
+- COMMENT YOUR CODE!!!
+
+Hardware:
+- Camera may refuse to turn on because an expansion battery was connected to the camera while the camera was turned *off*. Remove expansion battery and MAIN BATTERY, wait 5-10 seconds, connect main battery, turn on GoPro and connect expansion battery *while camera is turned on*. Camera should now turn off and on properly, while expansion battery remains connected.
