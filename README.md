@@ -10,7 +10,7 @@ There are many versions of gopro scripts for long exposure and time lapse but ea
 > 6. sleep 10                              #wait for exposure (up to 8 sec), and image to be processed (1-2 sec)
 > 7. reboot yes                            #restart GoPro and run the script again
 
-Valid ISO values need to be checked, probably 100, 200, 300, 400, 500, 600, 700 or 800
+Valid ISO values are: 100 / 200 / 400 / 600 / 800
 
 ExposureCode = -ln(ExposureTime/8)*182 (rounded to the nearest integer and in the range [0 1000])
 
@@ -25,7 +25,7 @@ ExposureTime (sec)|ExposureCode
 2                 |     252
 5                 |      86
 8                 |       0
-Above time table and equation are derived from EXIF information printed to photos collected at various settings.
+The ExposureTime lookup table and equation is derived from EXIF information available in photos collected by a Hero3+Black colected using a range of ExposureCode values.
 
 Line Feeds:
 - You must use Linux style line feed to end each line, this is ascii code 10, often coded as "/n".
